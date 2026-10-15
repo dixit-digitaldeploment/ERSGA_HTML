@@ -696,6 +696,7 @@ p.gform_required_legend {
 
       /* height: 100%;*/
       &:hover {
+        border-color: $gray-900;
         h3 {
           // color: $orange;
           text-decoration: underline;
@@ -704,6 +705,7 @@ p.gform_required_legend {
     }
 
     &:hover {
+      border-color: $gray-900;
       // outline: 1px solid #032b4e;
     }
 

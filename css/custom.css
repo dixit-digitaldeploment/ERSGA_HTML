@@ -76,7 +76,7 @@
   font-display: swap;
 }
 body {
-  color: #2b2b2b;
+  color: #404040;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #eff5FF;
@@ -107,7 +107,7 @@ h6,
 h1,
 .h1 {
   font-size: 34px;
-  color: #000;
+  color: #404040;
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -115,7 +115,7 @@ h1,
 h2,
 .h2 {
   font-size: 28px;
-  color: #000;
+  color: #404040;
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -123,21 +123,21 @@ h2,
 h3,
 .h3 {
   font-size: 24px;
-  color: #000;
+  color: #404040;
   font-weight: 700;
 }
 
 h4,
 .h4 {
   font-size: 22px;
-  color: #003597;
+  color: #404040;
   font-weight: 700;
 }
 
 h5,
 .h5 {
   font-size: 18px;
-  color: #003597;
+  color: #404040;
   font-weight: 700;
   text-transform: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -145,7 +145,7 @@ h5,
 
 h6,
 .h6 {
-  color: #000;
+  color: #404040;
   font-size: 16px;
   text-transform: none;
   font-weight: 700;
@@ -486,7 +486,8 @@ label.title {
   border-radius: 24px;
   border: 1.5px solid #003597;
   background: var(--Theme-colors-Background-White, #FFF);
-  padding: 8px 12px;
+  padding: 10px 12px;
+  display: inline-block;
 }
 .reset a img,
 .reset #reset-filters img {
@@ -1284,8 +1285,14 @@ p.gform_required_legend {
   text-decoration: none;
   /* height: 100%;*/
 }
+.img_text_card_row .text-img-wrap > a:hover {
+  border-color: #202020;
+}
 .img_text_card_row .text-img-wrap > a:hover h3 {
   text-decoration: underline;
+}
+.img_text_card_row .text-img-wrap:hover {
+  border-color: #202020;
 }
 .img_text_card_row .text-img-wrap .img_card_block {
   position: relative;
@@ -4872,6 +4879,7 @@ legend.gform-field-label {
   background: transparent;
   box-shadow: none;
   padding: 32px;
+  border-radius: 8px;
 }
 .nav_section .navBlock_col i {
   color: #003597;
@@ -4883,6 +4891,9 @@ legend.gform-field-label {
 }
 .nav_section .navBlock_col .navblock_txt {
   text-align: center;
+}
+.nav_section .navBlock_col:hover, .nav_section .navBlock_col:focus-within {
+  background: #eff5FF;
 }
 .nav_section h2 {
   font-size: 22px;
@@ -6451,7 +6462,7 @@ legend.gform-field-label {
   position: relative;
   padding: 16px;
   padding-right: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   position: relative;
 }
 .resultWraper .resull_filter .result_row:last-child {
@@ -6485,6 +6496,22 @@ legend.gform-field-label {
 .resultWraper .resull_filter .result_row .opens_externally i {
   margin-right: 8px;
 }
+.resultWraper .resull_filter .result_row .meta {
+  margin-bottom: 8px;
+}
+.resultWraper .resull_filter .result_row .category {
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--Theme-colors-Brand-Primary, #003597);
+  background: var(--Theme-colors-Background-Primary-Light, #EFF5FF);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #003597;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+}
 .resultWraper .resull_filter .result_row .re_category {
   color: #414141;
   font-size: 14px;
@@ -6505,6 +6532,9 @@ legend.gform-field-label {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+.resultWraper .resull_filter .result_row:hover, .resultWraper .resull_filter .result_row:focus-visible {
+  border-color: #202020;
 }
 .resultWraper .resull_filter .result_row:hover h3, .resultWraper .resull_filter .result_row:focus-visible h3 {
   text-decoration: underline;
@@ -7400,6 +7430,9 @@ p.date {
   padding: 40px;
   overflow: hidden;
 }
+.news_content:hover, .news_content:focus-within {
+  border-color: #202020;
+}
 .news_content:hover h3, .news_content:focus-within h3 {
   text-decoration: underline;
   color: #003597;
@@ -7790,7 +7823,6 @@ span.date {
   margin: 0;
 }
 .news_grid_info.listView .newsRow .newsColumn .news_content {
-  border-top: 0;
   padding: 16px;
   flex-direction: row;
   gap: 16px;
@@ -12942,6 +12974,176 @@ span.date {
   }
 }
 
+.main_content > .browse_your_plan {
+  max-width: 1200px;
+}
+
+.form_template .browse_your_plan {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.form_template .browse_your_plan h2 {
+  margin: 0;
+  color: #404040;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.form_template .browse_your_plan__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+}
+.form_template .browse_your_plan__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 219px;
+  padding: 40px;
+  border: 1px solid #e0e0E0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+  color: inherit;
+  text-decoration: none;
+}
+.form_template .browse_your_plan__card:hover, .form_template .browse_your_plan__card:focus-visible, .form_template .browse_your_plan__card.is-active {
+  border-color: #202020;
+  color: inherit;
+  text-decoration: none;
+}
+.form_template .browse_your_plan__card h3 {
+  margin: 0;
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.form_template .browse_your_plan__card p {
+  margin: 0;
+  color: #404040;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.form_template .browse_your_plan__card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.form_template .browse_your_plan__card li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #404040;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.form_template .browse_your_plan__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 4px 6px;
+  border: 1px solid #003597;
+  border-radius: 4px;
+  background: #eff5FF;
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+@media (max-width: 1199.9px) {
+  .form_template .browse_your_plan__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .form_template .browse_your_plan {
+    gap: 24px;
+  }
+  .form_template .browse_your_plan__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form_template .browse_your_plan__card {
+    min-height: 0;
+    padding: 24px;
+  }
+}
+.form_template .search_filter_title .filterWrap {
+  grid-template-columns: 1fr 1fr 120px;
+}
+@media (max-width: 768px) {
+  .form_template .search_filter_title .filterWrap {
+    grid-template-columns: 1fr;
+  }
+}
+.form_template .search_filter_title .filterWrap .reset {
+  margin-bottom: 0;
+}
+
+.resource_detail .content_area {
+  max-width: 1200px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e0e0E0;
+}
+.resource_detail .on_page_links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+.resource_detail .on_page_links p {
+  margin: 0;
+  color: #404040;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+.resource_detail .on_page_links a {
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-position: from-font;
+  white-space: nowrap;
+}
+.resource_detail .on_page_links a:hover, .resource_detail .on_page_links a:focus-visible {
+  color: #202020;
+}
+.resource_detail .filterBlocks {
+  border-bottom: 1px solid #e0e0E0;
+}
+.resource_detail .memberWrapper {
+  padding-top: 40px;
+}
+.resource_detail .memberWrapper:last-of-type:last-child .filterBlocks {
+  border-bottom: 0px solid #e0e0E0;
+  padding: 0;
+}
 @font-face {
   font-family: "Proxima Nova";
   src: url("../../../fonts/ProximaNova-BlackIt.woff2") format("woff2"), url("../../../fonts/ProximaNova-BlackIt.woff") format("woff");

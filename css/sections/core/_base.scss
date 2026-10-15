@@ -1,6 +1,6 @@
 //componenets (button, anchor tags, heading tags etc)
 body {
-  color: #2b2b2b;
+  color: #404040;
   font-size: 18px;
   @include primary-font;
   background-color: $primary-light;
@@ -34,7 +34,7 @@ h6,
 h1,
 .h1 {
   font-size: 34px;
-  color: $black;
+  color: #404040;
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -42,7 +42,7 @@ h1,
 h2,
 .h2 {
   font-size: 28px;
-  color: #000;
+  color: #404040;
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -50,21 +50,21 @@ h2,
 h3,
 .h3 {
   font-size: 24px;
-  color: #000;
+  color: #404040;
   font-weight: 700;
 }
 
 h4,
 .h4 {
   font-size: 22px;
-  color: $primary;
+  color: #404040;
   font-weight: 700;
 }
 
 h5,
 .h5 {
   font-size: 18px;
-  color: $primary;
+  color: #404040;
   font-weight: 700;
   text-transform: none;
   font-family: $secondary-font;
@@ -72,7 +72,7 @@ h5,
 
 h6,
 .h6 {
-  color: #000;
+  color: #404040;
   font-size: 16px;
   text-transform: none;
   font-weight: 700;
@@ -474,7 +474,8 @@ label.title {
     border-radius: 24px;
     border: 1.5px solid #003597;
     background: var(--Theme-colors-Background-White, #FFF);
-    padding: 8px 12px;
+    padding: 10px 12px;
+    display: inline-block;
     img {
       margin-right: 5px;
     }
