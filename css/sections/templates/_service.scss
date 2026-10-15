@@ -1,0 +1,486 @@
+// Start / Stop Service — matches Figma node 5160-12504
+// Uses _base.scss typography; variables/mixins from breakpoints-mixin-variables
+.detail_wrap {
+    padding-top: 64px;
+    padding-bottom: 80px;
+    @include md {
+        padding-bottom: 40px;
+    }
+    ul.main-list li,
+    ol.main-list li {
+        margin-bottom: 10px;
+    }
+    .contact_box {
+        background: #F8F8F8;
+    }
+    // Page title (H1) — full width above row
+    .service_page_title {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        h1 {
+            margin-bottom: 5px;
+        }
+    }
+    // Advanced Notice Alert — yellow border, light yellow bg (Figma)
+    .service_alert {
+        background: rgba(255, 204, 77, 0.15);
+        border: 2px solid $yellow;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 40px;
+    }
+    .service_alert_inner {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .service_alert_header {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        span {
+            @include primary-font;
+            font-size: 16px;
+            font-weight: 600;
+            color: $secondary;
+        }
+    }
+    .service_alert p {
+        margin: 0;
+    }
+    .col_left {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include desk {
+            flex: 0 0 70%;
+            max-width: 70%;
+        }
+        .wp-block-kadence-tabs .kt-tabs-wrap .kt-title-item {
+            flex-grow: 1;
+        }
+    }
+    .col_right {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include desk {
+            flex: 0 0 30%;
+            max-width: 30%;
+        }
+    }
+    // —— Main: H2 + tabs + accordions ——
+    .service_heading {
+        margin-bottom: 24px;
+    }
+    .service_heading h2 {
+        margin-bottom: 0;
+    }
+    // Tabs — active: UI dark blue bg, white text, 3px bright blue bottom; inactive: Gray-100
+    .service_tabs {
+        margin-bottom: 40px;
+        .nav-tabs {
+            border-bottom: none;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 4px;
+            align-items: center;
+            .nav-item {
+                margin-bottom: 0;
+                flex-grow: 1;
+            }
+            .nav-link {
+                @include primary-font;
+                font-size: 16px;
+                font-weight: 600;
+                color: $secondary;
+                background: #F0F0F0;
+                border: none;
+                border-bottom: 3px solid transparent;
+                border-radius: 0;
+                padding: 4px 12px;
+                min-height: 40px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+                width: 100%;
+                gap: 8px;
+                &:hover {
+                    color: $black;
+                    background: #e5e5e5;
+                }
+                &.active {
+                    color: $white;
+                    background: $primary;
+                    border-bottom-color: $brightblue;
+                    img {
+                        filter: brightness(0) saturate(100%) invert(85%) sepia(40%) saturate(910%) hue-rotate(325deg) brightness(107%) contrast(103%);
+                    }
+                    i {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            padding-top: 40px;
+        }
+    }
+    // What Would you like to do (H3) + accordion cards
+    .service_what_section {
+        margin-bottom: 0;
+    }
+    .service_what_section h3 {
+        margin-bottom: 16px;
+    }
+    // Custom accordion — white bg, gray-200 border, shadow; each row: icon circle + content + chevron
+    .service_accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .service_accordion_item {}
+        .service_accordion_header {
+            background: transparent;
+            padding: 0;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            overflow: hidden;
+            background: $white;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+        }
+        .service_accordion_btn {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px;
+            text-align: left;
+            @include primary-font;
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            gap: 16px;
+            &:hover {
+                color: inherit;
+            }
+            &[aria-expanded="true"] {
+                background: #F0F0F0;
+            }
+        }
+        .service_accordion_icon_circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            @include desk {
+                margin-bottom: 25px;
+            }
+            i {
+                font-size: 26px;
+            }
+        }
+        .service_accordion_icon_start {
+            background: #E3F7EE;
+            border-color: #C7E4D6;
+            i {
+                color: $green;
+            }
+        }
+        .service_accordion_icon_stop {
+            background: #FFE3E3;
+            border-color: #FFCECE;
+            i {
+                color: #B20E0E;
+            }
+        }
+        .service_accordion_icon_transfer {
+            background: #FFF5DB;
+            border-color: #FFE6A7;
+            i {
+                color: #C06D0E;
+            }
+        }
+        .service_accordion_content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .service_accordion_title {
+            @include primary-font;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: $secondary;
+        }
+        .service_accordion_sub {
+            @include primary-font;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: $secondary;
+        }
+        .service_accordion_time {
+            @include primary-font;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.57;
+            color: $secondary;
+        }
+        .service_accordion_icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.2s ease;
+            color: #1D3264;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: currentColor;
+                transition: transform 0.2s ease, opacity 0.2s ease;
+            }
+            &::before {
+                width: 16px;
+                height: 2px;
+                left: 50%;
+                top: 50%;
+                margin-left: -8px;
+                margin-top: -1px;
+            }
+            &::after {
+                width: 2px;
+                height: 16px;
+                left: 50%;
+                top: 50%;
+                margin-left: -1px;
+                margin-top: -8px;
+            }
+        }
+        .service_accordion_btn[aria-expanded="true"] .service_accordion_icon::after {
+            opacity: 0;
+            transform: scaleY(0);
+        }
+        .service_accordion_panel {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            border-top: none;
+            transition: max-height 0.3s ease, opacity 0.25s ease;
+        }
+        .service_accordion_item.is_open .service_accordion_panel {
+            max-height: 800px;
+            opacity: 1;
+        }
+        .service_accordion_panel[hidden] {
+            display: none !important;
+        }
+        .service_accordion_body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        // Start Service blocks (Figma 5160-12679): H4 + list, then H4 + contact list
+        .service_start_block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .service_start_block h4 {
+            margin: 0;
+        }
+        .service_start_block ul.main-list {
+            margin: 0;
+        }
+        // Submit your request — contact rows with icon, H6 label, link/body text, optional hours
+        .service_contact_list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .service_contact_row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .service_contact_row img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .service_contact_content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 0;
+        }
+        .service_contact_content h6 {
+            margin: 0;
+        }
+        .service_contact_content a {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.6;
+            color: $blue;
+        }
+        .service_contact_content p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.57;
+            color: $secondary;
+        }
+        .service_contact_divider {
+            margin: 24px 0;
+            border: none;
+            height: 1px;
+            background: #E0E0E0;
+        }
+        .service_accordion_body p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    // —— Sidebar — Gray-50, Questions? + contact grid + Resources + CTA ——
+    .service_sidebar {
+        @include md {
+            margin-top: 32px;
+        }
+        h3 {
+            margin-bottom: 16px;
+        }
+        .sidebar_gp {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #C0C0C0;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    .service_sidebar_contact {
+        background: #F8F8F8;
+        display: flex;
+        flex-direction: column;
+        padding: 16px 16px 16px 16px;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+        h4 {
+            color: $black;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .service_sidebar_contact h3 {
+        @include primary-font;
+        font-size: 20px;
+        font-weight: 700;
+        color: $black;
+        border-bottom: 1px solid #C0C0C0;
+        padding-bottom: 16px;
+    }
+    .service_sidebar_stroke {
+        height: 1px;
+        background: #C0C0C0;
+        width: 100%;
+    }
+    // Contact rows: icon + text (CSS grid per row)
+    .service_sidebar_row {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px;
+        align-items: start;
+    }
+    .service_sidebar_row_icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        position: relative;
+        top: -2px;
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .service_sidebar_row_desc {
+        p {
+            @include primary-font;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.57;
+            color: $black;
+        }
+        p:last-child {}
+        a {
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 1.6;
+            color: $blue;
+        }
+        &.hours {
+            p {
+                font-weight: 300;
+            }
+        }
+    }
+    // Resources
+    .service_resources {
+        padding-top: 0;
+        border-top: none;
+        .btn_sm+.btn_sm {
+            margin-top: 10px;
+        }
+    }
+    .service_resources h4 {
+        margin: 0 0 16px;
+        @include primary-font;
+        font-size: 20px;
+        font-weight: 700;
+        color: $secondary;
+    }
+    .service_resources_links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+    .service_resources_links .doc_block {
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .service_resources_lead {
+        margin: 0 0 16px;
+        @include primary-font;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $secondary;
+    }
+    .service_resources .btn_sm {
+        display: inline-block;
+    }
+}

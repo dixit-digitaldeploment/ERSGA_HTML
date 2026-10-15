@@ -1,0 +1,82 @@
+.faq_section {
+  background: $primary-light;
+  padding: 40px;
+  .container {
+    max-width: 1200px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__row {
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+  }
+  &__card {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 32px;
+    min-width: 0;
+    padding: 40px;
+    border-radius: 8px;
+    background: $white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+    h2 {
+      margin: 0;
+      color: $primary;
+      font-family: $primary-font;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 0;
+      border-bottom: 1px solid $gray-200;
+      color: $gray-700;
+      font-family: "Arimo", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      text-decoration: none;
+      span {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+      i {
+        flex-shrink: 0;
+        width: 15px;
+        font-size: 12px;
+        text-align: center;
+      }
+      &:hover,
+      &:focus-visible {
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+  }
+  @media (max-width: 991.9px) {
+    padding: 40px 24px;
+    &__row {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 24px 16px;
+    &__card {
+      padding: 24px;
+      gap: 24px;
+    }
+  }
+}

@@ -1,0 +1,282 @@
+// ===== Event Detail starts =====
+.event-detail {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    // background: #F8F8F8;
+    p strong {
+        font-weight: 600;
+    }
+    h2 {
+    }
+    .title {
+        padding-right: 100px;
+    }
+    .evt-row {
+        // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+        // padding: 32px;
+        // margin: 0;
+        // background: $white;
+        @include md {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    .event-dt-info {
+        >*{
+            margin-bottom: 16px;
+        }
+        @include desk {
+            padding-left: 15px;
+        }
+    }
+    .evt_img_info {
+        text-align: left;
+        margin-bottom: 15px;
+        img{
+            border-radius: 10px;
+        }
+        .item {
+            img {
+                height: 400px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .cancel-info {
+        display: inline;
+        margin-left: 10px;
+        // position: absolute;
+        // top: 0;
+        // right: 16px;
+        // margin: 0;
+    }
+    .category {
+        margin-bottom: 16px;
+        display: block;
+        color: #4c4c4e;
+    }
+    .location {
+        color: #5b5a5a;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+    }
+    .event-date,
+    .event-time {
+        color: #4c4c4e;
+        font-size: 14px;
+        // font-weight: 500;
+    }
+    .date {
+        margin-bottom: 10px;
+        // font-weight: 500;
+    }
+    .evt-time {
+        margin-bottom: 5px;
+    }
+    .evt-time,
+    .loca_info {
+        font-size: 14px;
+        color: #434242;
+    }
+    .dt-info {
+        p {
+        }
+    }
+    .document_era {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .img_caption {
+        padding-top: 8px;
+        font-style: italic;
+        font-weight: normal;
+        line-height: 22px;
+        p {
+            font-style: italic;
+        }
+    }
+    .dt-info {
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+    .evt_desc {
+        background: #fff !important;
+    }
+    .thumb img {
+        width: 85px;
+        height: 85px;
+        object-fit: cover;
+    }
+    .thumb.active img {
+        border-color: #007bff;
+    }
+    .thumb-slider {
+        padding-top: 16px;
+        padding-left: 30px;
+        padding-right: 30px;
+        .owl-stage {
+            margin: 0 auto;
+        }
+        .owl-item {
+            width: 85px !important;
+        }
+        .owl-stage-outer {
+        }
+        .owl-prev {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: #fff !important;
+            height: 110px;
+        }
+        .owl-next {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background: #fff !important;
+            height: 110px;
+            img {
+                @include rotate;
+            }
+        }
+        .disabled {
+            opacity: 0.4;
+        }
+        button {
+            outline: none !important;
+            :focus-visible {
+                outline: 1px dotted #005fcc;
+                outline-offset: 2px;
+            }
+        }
+    }
+    .thumbnail-slider {
+        width: 100%;
+        // ── Main Slider ─────────────────────────────────────────
+        &__main {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            .slide-item {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 365px;
+                    object-fit: cover;
+                    display: block;
+                    @media (max-width: 480px) {
+                        height: 300px;
+                    }
+                }
+            }
+        }
+        // ── Thumbnail Row ────────────────────────────────────────
+        &__nav-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        // ── Thumbnail Track ──────────────────────────────────────
+        &__nav {
+            flex: 1;
+            overflow: hidden;
+            .slide-item {
+                padding: 0 5px;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                    height: 96px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    display: block;
+                    border: 3px solid transparent;
+                    opacity: 1;
+                    transition:
+                        border-color 0.25s,
+                        opacity 0.25s;
+                    @media (max-width: 480px) {
+                        height: 60px;
+                    }
+                }
+            }
+            .slick-current img {
+                opacity: 0.65;
+            }
+            .slide-item:hover img {
+            }
+        }
+        // ── Arrow Buttons ────────────────────────────────────────
+        &__arrow {
+            background: none;
+            border: none;
+            &:hover {
+            }
+            &:focus-visible {
+            }
+        }
+    }
+}
+
+.cancel-info {
+    color: #900;
+    font-family: $secondary-font;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 6px !important;
+    display: table;
+    margin-bottom: 10px !important;
+    font-weight: 700;
+    border-radius: 4px;
+    border: 1px solid var(--Utility-colors-Semantic-Error---Mid, #d50000);
+    background: var(--Utility-colors-Grayscale-White, #fff);
+    text-transform: uppercase;
+}
+
+.related_events {
+    padding-top: 60px;
+}
+
+.up_events {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    .evtrow {
+        margin-bottom: 0px;
+    }
+    .evt_col {
+        a {
+            text-decoration: none;
+        }
+    }
+    .event_item {
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+        height: 100%;
+        border-radius: 8px;
+        .evt_img {
+            img {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+        }
+        .text_evt_block {
+            padding: 8px 16px;
+            h3 {
+                font-size: 20px;
+                font-weight: 700;
+                padding-top: 5px;
+            }
+            .evt-date {
+                font-size: 14px;
+                font-weight: normal;
+                color: #606060;
+            }
+        }
+        &:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+            outline: 1px solid $primary;
+        }
+    }
+}

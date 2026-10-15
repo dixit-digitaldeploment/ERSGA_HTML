@@ -1,0 +1,339 @@
+$breakpoints:( "xs":0, "sm":480px, "md":768px, "lg":992px, "xl":1200px, );
+@mixin xl {
+    @media( min-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media( min-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media( max-width: map-get($breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media( max-width: map-get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin desk {
+    @media( min-width: map-get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin desklg {
+    @media( min-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (min-width: 768px) and (max-width: map-get($breakpoints, "lg") - 1) {
+        @content;
+    }
+}
+
+@mixin max-lg {
+    @media (max-width: 1199.9px) {
+        @content;
+    }
+}
+
+//ini custom breakpoints
+@mixin breakpoint($bp:0) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
+
+//Mixins
+@mixin all {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin primary-font {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin secondary-font {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin raleway {
+    font-family: "Raleway", sans-serif;
+}
+
+@mixin arimo {
+    font-family: "Arimo", sans-serif;
+}
+
+@mixin upper {
+    text-transform: uppercase;
+}
+
+@mixin regular {
+    font-weight: 400;
+}
+
+@mixin medium {
+    font-weight: 500;
+}
+
+@mixin semi {
+    font-weight: 600;
+}
+
+@mixin bold {
+    font-weight: 700;
+}
+
+@mixin dflex {
+    display: flex;
+}
+
+@mixin underline {
+    text-decoration: underline;
+}
+
+@mixin dfw {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin img-white {
+    filter: brightness(0) invert(1);
+}
+
+@mixin rotate {
+    transform: rotate(180deg);
+}
+
+@mixin img-green {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(78%) saturate(5573%) hue-rotate(149deg) brightness(94%) contrast(99%);
+}
+
+@mixin img-darkgreen {
+    filter: brightness(0) saturate(100%) invert(22%) sepia(10%) saturate(5913%) hue-rotate(129deg) brightness(97%) contrast(98%);
+}
+
+@mixin img-secondgreen {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(84%) saturate(684%) hue-rotate(125deg) brightness(102%) contrast(101%);
+}
+
+@mixin img-tertiarygreen {
+    filter: brightness(0) saturate(100%) invert(97%) sepia(64%) saturate(426%) hue-rotate(41deg) brightness(95%) contrast(94%);
+}
+
+@mixin img-black {
+    filter: brightness(0) saturate(100%) invert(1%) sepia(77%) saturate(1660%) hue-rotate(166deg) brightness(90%) contrast(102%);
+}
+
+@mixin img-blue {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(90%) saturate(3817%) hue-rotate(216deg) brightness(90%) contrast(102%);
+}
+@mixin img-orange {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(60%) saturate(7451%) hue-rotate(15deg) brightness(94%) contrast(100%);
+}
+
+@mixin line-clamp($lines) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden; 
+} 
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-BlackIt.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-BlackIt.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-Black.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNovaT-Thin.woff2') format('woff2'),
+        url('../../../fonts/ProximaNovaT-Thin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-BoldIt.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-BoldIt.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-Bold.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-ThinIt.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-ThinIt.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-Light.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-RegularIt.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-RegularIt.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+// @font-face {
+//     font-family: 'Proxima Nova';
+//     src: url('../../../fonts/SourceSansPro-LightIt.woff2') format('woff2'),
+//         url('../../../fonts/SourceSansPro-LightIt.woff') format('woff');
+//     font-weight: 300;
+//     font-style: italic;
+//     font-display: swap;
+// }
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../../fonts/ProximaNova-SemiboldIt.woff2') format('woff2'),
+        url('../../../fonts/ProximaNova-SemiboldIt.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+//Variables
+$primary:#003597;
+$primary-light:#eff5FF;
+$secondary:#509e45;
+$secondary-light:#dcecDA;
+$secondary-dark:#407e37;
+$white:#ffffff;
+$gray-900:#202020;
+$gray-800:#303030;
+$gray-700:#404040;
+$gray-600:#606060;
+$gray-500:#808080;
+$gray-400:#8c8c8C;
+$gray-300:#c0c0C0;
+$gray-200:#e0e0E0;
+$gray-100:#f0f0F0;
+$gray-50:#f8f8F8;
+$black:#000;
+$green:#00703C;
+$lightgreen:#c1ebB5;
+$darkblue:#001c37;
+$darkgreen:#02503F;
+$lightblue:#097CF8;
+$blue:#1C5DEA;
+$bg-blue:#234188;
+$brightblue:#2BADE7;
+$purple:#F01FF0;
+$orange:#D34100;
+$yellow:#FFCC4D;
+$border-color:#D4DCE4;
+$red:#C01111;
+$red-hover:#C50105;
+$purple:#7A4090;
+$lightgray:#F9F8F8;
+$primary-font:  Arial, Helvetica, sans-serif;
+$secondary-font: Arial, Helvetica, sans-serif;
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+// color paltte - 
+$colors:( "primary":$primary, "secondary":$secondary, "green":#008943, "black":#1E1E1E, "lightgray":#F5F5F5);
+.test-btn {
+    background-color: map-get($colors, "blue");
+}
+
+@mixin fancy-border($size:1px, $color:#000) {
+    border: $size solid $color;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

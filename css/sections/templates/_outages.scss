@@ -1,0 +1,137 @@
+// ============================================================
+// Outages - News section
+.outages_news_section {
+    background: #F8F8F8;
+    padding: 40px 0px;
+    .outages_news_section_intro p {
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.4em;
+        color: #4C4C4E;
+        margin-bottom: 40px;
+    }
+    .button_ico_box {
+        padding: 16px 24px;
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+        .img_icon img {
+            filter: none;
+        }
+    }
+    @media (max-width: 767.98px) {
+        padding: 32px 0px;
+    }
+}
+
+// ============================================================
+// Report / Page Heading Section (outages)
+.report_wrap {
+    padding: 40px 0 24px;
+    .page_heading_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .page_heading_section h2 {
+        width: 100%;
+        text-align: left;
+    }
+    .report_cards_row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 0;
+    }
+    .report_card_col {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .report_card {
+        background: $white;
+        padding: 16px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .report_card_inner {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .report_card_header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .report_card_header h3 {
+        margin-bottom: 0;
+    }
+    .report_card_inner p {
+        margin-bottom: 0;
+        line-height: 1.5em;
+    }
+    .report_card_inner p a {
+        font-size: 15px;
+        line-height: 1.6em;
+    }
+    .report_card_col_last .report_card {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #A0A0A0;
+        }
+    }
+    .report_callout {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        padding: 12px 16px;
+        background: rgba(255, 204, 77, 0.15);
+        border: 2px solid $yellow;
+        border-radius: 6px;
+    }
+    .report_callout p {
+        margin-bottom: 0;
+        color: $black;
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+    @include md {
+        padding: 32px 0 24px;
+        .report_card_col_last .report_card {
+            border-left: none;
+            border-top: 1px solid #A0A0A0;
+        }
+        .report_card_col {
+            margin-bottom: 24px;
+        }
+        .report_card_col:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.how_works {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    .how_to_cont .how_row .how_title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .how_to_cont {
+        max-width: 100%;
+    }
+    .wp-block-heading {
+        margin-bottom: 40px;
+    }
+}
