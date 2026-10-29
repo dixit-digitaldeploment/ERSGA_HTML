@@ -1,0 +1,131 @@
+.site-sitemap {
+  padding-top: 10px;
+  padding-bottom: 70px;
+}
+
+.site-sitemap__list,
+.site-sitemap__list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-sitemap__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+  row-gap: 28px;
+}
+
+.site-sitemap__list > li > a {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.site-sitemap__list ul {
+  margin-top: 8px;
+  padding-left: 16px;
+}
+
+.site-sitemap__list li {
+  margin: 0 0 8px;
+}
+
+.site-sitemap__list ul a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .site-sitemap__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leadership-people {
+  display: block;
+  padding-bottom: 20px;
+  clear: both;
+}
+
+.leadership-person {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  column-gap: 22px;
+  width: 100%;
+  clear: both;
+  padding: 28px 0 20px;
+  border-top: 1px solid #d5d5d5;
+}
+
+.leadership-person:first-child {
+  border-top: 0;
+  padding-top: 8px;
+}
+
+.leadership-person__name,
+.leadership-person__roles {
+  grid-column: 1 / -1;
+}
+
+.leadership-person__name {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.leadership-person__roles {
+  margin: 0 0 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.leadership-person__photo {
+  float: none;
+  width: 180px;
+  margin: 0;
+  grid-column: 1;
+}
+
+.leadership-person__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.leadership-person__bio {
+  grid-column: 2;
+  min-width: 0;
+  overflow: visible;
+}
+
+.leadership-person:not(:has(.leadership-person__photo)) .leadership-person__bio {
+  grid-column: 1 / -1;
+}
+
+.leadership-person__bio > :first-child {
+  margin-top: 0;
+}
+
+.leadership-person__bio > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .leadership-person {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-person__photo,
+  .leadership-person__bio,
+  .leadership-person:not(:has(.leadership-person__photo)) .leadership-person__bio {
+    grid-column: 1;
+    width: 180px;
+  }
+
+  .leadership-person__bio {
+    width: auto;
+    margin-top: 16px;
+  }
+}

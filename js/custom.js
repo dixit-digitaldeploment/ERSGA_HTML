@@ -155,7 +155,7 @@ $(document).ready(function () {
 
   // Mobile: append plusMinus toggles and mobile table wraps
   //Navbar
-  if (jQuery(window).width() < 1200) {
+  // if (jQuery(window).width() < 1200) {
     $(".navbar-nav  > li.has-dropdown").append(
       '<div class="plusMinus" tabindex="0" aria-expanded="false" role="button" aria-label="Toggle Dropdown"></div>'
     );
@@ -258,7 +258,7 @@ $(document).ready(function () {
       $(this).wrap('<div class="table-wrap"></div>');
     });
     $(".wp-block-group > table").wrap('<div class="table-wrapper"></div>');
-  }
+  // }
 
   // Keep search at the top of the mobile menu; move login and language below the nav
   (function ($) {

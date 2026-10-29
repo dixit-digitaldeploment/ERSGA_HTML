@@ -33,15 +33,19 @@
     position: relative;
     min-width: 0;
     overflow: hidden;
-    > img {
+    > img,
+    > video,
+    > iframe {
       display: block;
       width: 100%;
       height: auto;
       aspect-ratio: 200 / 112;
       object-fit: cover;
       max-height: none;
+      border: 0;
     }
   }
+ 
   .banner_play {
     position: absolute;
     left: 50%;
