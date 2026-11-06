@@ -1,0 +1,231 @@
+/* Handbook page template */
+
+.handbook-page .content_row {
+  align-items: start;
+}
+
+.handbook-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.handbook-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-position: from-font;
+  cursor: pointer;
+}
+
+.handbook-print:hover,
+.handbook-print:focus-visible {
+  color: #202020;
+  outline: none;
+}
+
+.handbook-print i {
+  font-size: 14px;
+}
+
+.handbook-title {
+  color: #003597;
+  margin-bottom: 24px;
+}
+
+.handbook-intro {
+  margin-bottom: 32px;
+}
+
+.handbook-intro > :last-child {
+  margin-bottom: 0;
+}
+
+.handbook-body > :first-child {
+  margin-top: 0;
+}
+
+.handbook-body h2 {
+  scroll-margin-top: 130px;
+  margin-top: 40px;
+  color: #003597;
+}
+
+.handbook-contents {
+  position: sticky;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.handbook-contents h2 {
+  margin: 0;
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.handbook-contents ul,
+.handbook-contents__editor ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.handbook-contents li,
+.handbook-contents__editor li {
+  margin: 0;
+}
+
+.handbook-contents__editor > :first-child {
+  margin-top: 0;
+}
+
+.handbook-contents__editor > :last-child {
+  margin-bottom: 0;
+}
+
+.handbook-contents__editor p {
+  margin: 0 0 12px;
+}
+
+.handbook-contents__editor a {
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.handbook-contents__editor a:hover,
+.handbook-contents__editor a:focus-visible {
+  color: #202020;
+  text-decoration: underline;
+}
+
+.handbook-contents__editor a.is-active,
+.handbook-contents__editor a.handbook-contents__link.is-active {
+  color: #202020;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.handbook-contents__link {
+  color: #003597;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.handbook-contents__link:hover,
+.handbook-contents__link:focus-visible {
+  color: #202020;
+  text-decoration: underline;
+}
+
+.handbook-contents__link.is-active {
+  color: #202020;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .handbook-page .content_row.two-col-right {
+    grid-template-columns: 1fr;
+  }
+
+  .handbook-contents {
+    position: static;
+  }
+}
+
+@media print {
+  .site_header,
+  .main_breadcrumb,
+  .handbook-page .no-print,
+  .site_footer,
+  .handbook-toolbar {
+    display: none !important;
+  }
+
+  .handbook-page .mainCon,
+  .handbook-page .content_row,
+  .handbook-page .main_content {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .handbook-body h2 {
+    scroll-margin-top: 0;
+    page-break-after: avoid;
+  }
+
+  .handbook-body,
+  .handbook-intro {
+    color: #000;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+
+  /* Force all accordion bodies open when printing. */
+  .handbook-page .kt-accordion-panel,
+  .handbook-page .kt-accordion-panel-inner,
+  .handbook-page .kt-accordion-panel-hidden,
+  .handbook-page .advgb-accordion-body,
+  .handbook-page .ui-accordion-content,
+  .handbook-page .acco_panel,
+  .handbook-page details {
+    display: block !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .handbook-page .kt-blocks-accordion-icon-trigger,
+  .handbook-page .advgb-accordion-header-icon,
+  .handbook-page .ui-accordion-header-icon,
+  .handbook-page .plus-minus,
+  .handbook-page .kt-blocks-accordion-icon-trigger:before,
+  .handbook-page .kt-blocks-accordion-icon-trigger:after {
+    display: none !important;
+  }
+
+  .handbook-page .kt-blocks-accordion-header,
+  .handbook-page .advgb-accordion-header,
+  .handbook-page .kt-accordion-header-wrap {
+    page-break-after: avoid;
+  }
+}

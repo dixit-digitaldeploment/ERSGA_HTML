@@ -549,7 +549,7 @@
   // ============================================================
   @media (max-width: 991px) {
     padding: 24px;
-
+    overflow-x: hidden;
     .container {
       padding: 0;
     }
@@ -694,6 +694,17 @@
 
     &__bottom {
       flex-direction: column;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: calc(100% + 50px);
+        height: 1px;
+        background: #808080;
+        left: -25px;
+        position: absolute;
+        top: -12px;
+      }
 
       .links-list {
         flex-direction: row;

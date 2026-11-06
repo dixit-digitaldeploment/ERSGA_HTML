@@ -294,6 +294,10 @@
       overflow: visible !important;
       background: #fff !important;
       border-radius: 4px !important;
+
+      @media (max-width: 1199.99px) {
+        width: 100% !important;
+      }
     }
 
     .proinput input.orig {
@@ -374,10 +378,10 @@
     .promagnifier,
     .innericon,
     .proclose {
-      height: 35px !important;
+      height: 44px !important;
 
       @include max-lg {
-        height: 35px !important;
+        height: 44px !important;
       }
     }
 
@@ -385,7 +389,7 @@
     .innericon,
     .proclose {
       @include max-lg {
-        width: 35px !important;
+        width: 44px !important;
       }
     }
   }
@@ -452,7 +456,12 @@
           &:after {}
         }
       }
-
+      &.activeBlue {
+        >a{
+          border-bottom: 2px solid var(--Theme-colors-Brand-Primary, #003597);
+        }
+        // border-bottom: 1px solid var(--Utility-colors-Grayscale-Gray-400, #A0A0A0);
+      }
       &:last-child>a::after {}
 
       @include xl {
@@ -561,7 +570,7 @@
     background: $gray-50;
     // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     transition: all 0.2s linear;
-    padding: 24px;
+    padding: 16px;
     border: 1px solid $gray-300;
 
     @include xl {
@@ -589,13 +598,21 @@
 
       // border-bottom: 1px solid var(--UI-Silver, #d5d5d5);
       >a {
-        display: block;
-        padding: 15px 8px;
-        color: $gray-700;
+        // display: block;
+        // padding: 15px 8px;
+        // color: $gray-700;
+        // font-size: 18px;
+        // font-weight: 400;
+        // line-height: normal;
+        // text-align: left;
+        display: inline-block;
+        padding: 8px;
+        color: #404040;
         font-size: 18px;
         font-weight: 400;
         line-height: normal;
         text-align: left;
+        width: auto;
 
         &:hover {
           color: $gray-900;
@@ -623,6 +640,7 @@
     .submenu {
       display: none;
       padding-left: 10px;
+
       //   padding-left: 40px;
       //   margin-bottom: 5px;
       //   padding-top: 10px;
@@ -703,10 +721,19 @@
 
   // --- Plus/Minus Toggle ---
   .plus-minus {
+    // position: absolute;
+    // top: 14px;
+    // right: 0px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // width: 20px;
+    // height: 20px;
+    // cursor: pointer;
     position: absolute;
-    top: 14px;
-    right: 0px;
-    display: flex;
+    top: 8px;
+    right: auto;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 20px;
@@ -729,9 +756,11 @@
       transform: rotate(180deg);
     }
 
-    &.minus-icon::after {
-      //   content: "\2212";
+    &.minus-icon{
       transform: rotate(180deg);
+      &::after {
+        //   content: "\2212";
+      }
     }
   }
 }
@@ -798,7 +827,8 @@
     min-height: 40px;
     min-width: auto;
     padding: 15px 8px;
-    padding-left: 30px;
+    text-indent: 22px;
+    // padding-left: 30px;
     // padding-left: 10px;
     // padding-right: 40px;
     border: 0;
@@ -1085,10 +1115,11 @@
 
         // border-bottom: 1px solid #e0e0e0;
         >a {
-          display: block;
+          display: inline-block;
           text-align: left;
           font-size: 21px;
           padding: 12px 8px !important;
+          padding-right: 40px !important;
 
           >svg {
             display: none;
@@ -1105,7 +1136,7 @@
           padding-top: 0;
           background: transparent;
           padding: 0;
-
+          padding-left: 20px;
           .menu-back {
             font-size: 18px;
             font-style: normal;
@@ -1147,15 +1178,26 @@
         }
 
         &.activeBlue {
-          border-bottom: 1px solid var(--Utility-colors-Grayscale-Gray-400, #A0A0A0);
+          // border-bottom: 1px solid var(--Utility-colors-Grayscale-Gray-400, #A0A0A0);
         }
       }
 
       .plusMinus {
+        // position: absolute;
+        // top: 10px;
+        // right: 0;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // width: 30px;
+        // height: 30px;
+        // text-align: center;
+        // cursor: pointer;
         position: absolute;
         top: 10px;
-        right: 0;
-        display: flex;
+        right: auto;
+        transform: translateX(-34px);
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 30px;
@@ -1182,7 +1224,7 @@
     }
 
     .plus-minus {
-      right: 5px;
+      // right: 5px;
     }
 
     // Megamenu — mobile
@@ -1252,7 +1294,7 @@
         margin-right: 5px;
       }
 
-      &.active {
+      &.active,&:not(.collapsed){
         background-color: $primary;
         border-radius: 50%;
         width: 38px;

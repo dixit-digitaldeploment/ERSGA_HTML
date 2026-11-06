@@ -30,7 +30,7 @@
 
 .alignright {
   float: right;
-  margin-left: 10px !important;
+  margin-left: 25px !important;
 
   .img_button_row,
   .simple_list_info .row,
@@ -121,10 +121,10 @@ figure.aligncenter {
   &.alignwide {
     >* {
       max-width: 1200px;
-      padding-left: 15px !important;
-      padding-right: 15px !important;
+      padding-left: 25px !important;
+      padding-right: 25px !important;
 
-      @media (min-width: 1300px) {
+      @media (min-width: 1250px) {
         padding-left: 0px !important;
         padding-right: 0px !important;
       }
@@ -139,7 +139,12 @@ figure.aligncenter {
       .wp-block-advgb-columns,
       .wp-block-media-text,
       .wp-block-table {
-        @media (min-width: 768px) {
+
+        // @media (min-width: 992px) {
+        //   padding-left: 10px !important;
+        //   padding-right: 10px !important;
+        // }
+        @media (min-width: 1300px) {
           padding-left: 0px !important;
           padding-right: 0px !important;
         }
@@ -623,6 +628,22 @@ div.advgb-tab-body>iframe {
       margin-right: auto;
     }
   }
+  &.alignwide{
+    > {
+
+      *,
+      .document_era,
+      .wp-block-advgb-accordions,
+      .gform_legacy_markup_wrapper,
+      .wp-block-image,
+      .wp-block-quote,
+      .embed-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 .wp-block-group.is-content-justification-left>* {
@@ -697,7 +718,7 @@ body .is-layout-constrained>.wp-block-group {
     }
 
     .wp-block-group:first-of-type:first-child {
-      padding-top: 30px;
+      // padding-top: 30px;
     }
 
     p:first-of-type:first-child,
@@ -1324,8 +1345,8 @@ legend.gform-field-label {
     }
 
     .wp-block-media-text__content {
-      padding-left: 0px !important;
-      padding-right: 0px !important;
+      // padding-left: 0px !important;
+      // padding-right: 0px !important;
     }
   }
 
@@ -1402,8 +1423,8 @@ legend.gform-field-label {
     padding-right: 25px !important;
 
     .wp-block-media-text__content {
-      padding-left: 0px !important;
-      padding-right: 0px !important;
+      // padding-left: 0px !important;
+      // padding-right: 0px !important;
     }
   }
 

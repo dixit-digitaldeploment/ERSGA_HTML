@@ -1952,6 +1952,9 @@
       text-decoration: none;
     }
   }
+  @media (max-width: 768px) {
+   margin-top: 50px;
+  }
 }
 
 // Froms and Document
@@ -2225,6 +2228,12 @@
   .memberWrapper {
     padding-top: 40px;
 
+    .filterBlocks {
+      @media (max-width: 1200px) {
+        padding: 0;
+      }
+    }
+
     &:last-of-type:last-child {
       .filterBlocks {
         border-bottom: 0px solid $gray-200;
@@ -2248,8 +2257,21 @@
 }
 
 
+.page-id-35515 .page_title {
+  padding-bottom: 0;
+}
+
 .child-page-section {
   padding: 40px 0 80px;
+
+  .row.child-page-row {
+    row-gap: 24px;
+  }
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 
   .child-page-content {
     height: 100%;
@@ -2269,11 +2291,39 @@
         font-size: inherit;
         font-weight: inherit;
         text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .child-page-excerpt {
+      margin: 12px 0 20px;
+      color: #404040;
+      line-height: 1.5;
+
+      p {
+        margin: 0 0 1em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .btn_learn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+
+      &:hover span {
+        text-decoration: underline;
       }
     }
 
     &:hover {
-      box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 1);
+      // box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 1);
     }
 
   }

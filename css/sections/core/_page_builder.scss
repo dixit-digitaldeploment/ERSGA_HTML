@@ -62,11 +62,12 @@ p.gform_required_legend {
   position: relative;
   font-family: $primary-font;
   font-size: 18px;
+  line-height: 1;
   text-decoration: none;
   font-weight: 700;
   background: $primary;
   border-radius: 24px !important;
-  border: 1px solid #2bade7 !important;
+  border: 1px solid $primary !important;
 
   &:hover,
   &:focus {
@@ -126,7 +127,8 @@ p.gform_required_legend {
 //   }
 // }
 
-.kb-buttons-wrap ,.wp-block-kadence-advancedbtn{
+.kb-buttons-wrap,
+.wp-block-kadence-advancedbtn {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -257,7 +259,7 @@ p.gform_required_legend {
 }
 
 .generic_middle_block {
-  max-width: 900px;
+  max-width: 900px !important;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 40px;
@@ -314,7 +316,7 @@ p.gform_required_legend {
     font-style: italic;
     margin-bottom: 6px;
     font-size: 18px;
-    color: $secondary;
+    // color: $secondary;
     margin-top: 0px;
   }
 }
@@ -415,14 +417,20 @@ p.gform_required_legend {
     position: relative;
     z-index: 9;
     display: table;
-    margin-bottom: 16px;
     color: $primary;
     // font-size: 40px;
+    margin-bottom: 0px;
   }
 
   p {
     color: $gray-700;
     margin: 0;
+  }
+
+  &:has(h1+p) {
+    h1 {
+      margin-bottom: 16px;
+    }
   }
 
   &.alignwide {
@@ -1058,9 +1066,13 @@ h2+.expand_img_grid {
   .expand_img {
     img {
       width: 100%;
-      aspect-ratio: 1/1;
+      // aspect-ratio: 1/1;
+      // border-top-left-radius: 8px;
+      // border-top-right-radius: 8px;
+      aspect-ratio: 3 / 4;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+      object-fit: cover;
     }
   }
 
@@ -1407,7 +1419,7 @@ h2+.expand_img_grid {
 }
 
 .how_to_cont {
-  max-width: 1000px;
+  // max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 
@@ -1876,7 +1888,12 @@ h2+.expand_img_grid {
 // ===== Kadence accordion starts =====
 .wp-block-kadence-accordion {
   padding-bottom: 20px;
-  max-width: 1200px !important;
+  max-width: 900px !important;
+
+  &.alignwide,
+  .alignwide & {
+    max-width: 1200px !important;
+  }
 
   .wp-block-kadence-pane {}
 
@@ -2296,6 +2313,7 @@ h2+.expand_img_grid {
     border-bottom: 1px solid #E0E0E0;
     white-space: nowrap;
     text-align: left !important;
+    min-width: 100px;
 
     p {
       font-size: 18px;
@@ -2314,6 +2332,7 @@ h2+.expand_img_grid {
     font-size: 16px;
     color: #2b2b2b;
     font-weight: 400;
+    min-width: 100px;
 
     p {
       font-size: 16px;
@@ -2390,6 +2409,7 @@ h2+.expand_img_grid {
       font-size: 16px;
       color: #2b2b2b;
       font-weight: 400;
+      min-width: 100px;
 
       p {
         font-size: 16px;
@@ -2813,6 +2833,9 @@ h2+.expand_img_grid {
     padding: 8px;
     border-radius: 4px;
     width: 100%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
 
     @include md {
       // font-size: 14px;
@@ -2887,6 +2910,55 @@ h2+.expand_img_grid {
   .gform_submission_error {
     color: #c02b0a;
     font-weight: bold !important;
+  }
+
+  .ginput_container_image_choice--label-show {
+    .gchoice {
+      &::after {
+        display: none !important;
+      }
+
+      .gfield-image-choice-wrapper-outer {
+        border-radius: 4px;
+        border: 1px solid var(--Utility-colors-Grayscale-Gray-400, #8C8C8C);
+        padding: 8px;
+
+        .gfield-choice-image-wrapper::before {
+          display: none;
+        }
+
+        .gform-field-label {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+        }
+
+        &:hover {
+          border-color: #202020;
+        }
+
+        &:has(input:checked) {
+          border: 3px solid var(--Utility-colors-Grayscale-Gray-400, #8C8C8C);
+        }
+      }
+    }
+  }
+
+  .gform_button_select_files {
+    background: #ffffff;
+    color: #003597;
+    border-color: #003597;
+    padding: 15px 16px;
+    border-radius: 36px;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .gform_button_select_files:hover {
+    border-color: #404040;
+    background: #eff5FF;
+    color: #404040;
   }
 
   @include md {
